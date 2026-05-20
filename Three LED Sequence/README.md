@@ -31,3 +31,18 @@ Example connection:
 - Second LED → Arduino digital pin 10
 - Third LED → Arduino digital pin 7
 - LED negative legs/cathodes → GND
+
+Project Images
+
+What I Learned
+
+Through this project, I learned how to:
+
+Connect multiple LEDs to an Arduino board
+Use more than one digital output pin
+Control LEDs one by one using code
+Create a simple sequence using delays
+Understand how Arduino can control multiple components in a repeated pattern
+Conclusion
+
+This project builds on the basic LED blink project by adding multiple LEDs and creating a simple sequence. It is a useful beginner project for understanding digital outputs, timing, and basic circuit organization with Arduino.
