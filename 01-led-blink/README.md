@@ -27,5 +27,3 @@ Example connection:
 
 - LED anode / longer leg → 220Ω resistor → Arduino digital pin 13
 - LED cathode / shorter leg → GND
-
-## Arduino Code
