@@ -1,0 +1,61 @@
+# DC Motor Control with Pushbuttons (Arduino Uno)
+
+A simple Arduino project for controlling the speed and direction of a DC motor using two pushbuttons, through a motor driver (H-bridge).
+
+## Description
+
+The program allows you to:
+- **Increase motor speed** by pressing one button (`buttonPlus`)
+- **Decrease motor speed** by pressing the other button (`buttonMinus`)
+- **Automatically change rotation direction**, depending on the sign of the speed value (positive/negative)
+- **Stop the motor** when the speed reaches zero
+
+The current motor speed is printed to the Serial Monitor (9600 baud).
+
+## Required Hardware
+
+- Arduino Uno
+- DC motor
+- Motor driver (e.g. L298N or similar H-bridge module)
+- 2 pushbuttons
+- Wires and breadboard
+- Power supply for the motor (depending on the motor)
+
+## Pin Layout
+
+| Component            | Arduino Pin |
+|-----------------------|:-----------:|
+| PWM (motor speed)     | 5 |
+| Direction 1 (dir1)    | 4 |
+| Direction 2 (dir2)    | 3 |
+| "Minus" button (decrease speed) | 8 |
+| "Plus" button (increase speed)  | 9 |
+
+> Note: the buttons are wired as pull-up (INPUT + internal pull-up via `digitalWrite(pin, HIGH)`), so a button press is read as `LOW` (0).
+
+## How the Code Works
+
+1. The program reads the state of both buttons.
+2. Each press of `buttonPlus` increases `mSpeed` by 10, and `buttonMinus` decreases it by 10.
+3. Speed is limited to the range **-255 to 255** (PWM range).
+4. When `mSpeed` is positive, the motor spins in one direction (`dir1 = HIGH, dir2 = LOW`), and when negative, in the opposite direction (`dir1 = LOW, dir2 = HIGH`).
+5. When `mSpeed = 0`, the motor stops (`analogWrite(speedPin, 0)`).
+6. The current speed is printed to the Serial Monitor for easier monitoring.
+
+## Installation and Usage
+
+1. Open the `.ino` file in the Arduino IDE.
+2. Wire the hardware according to the pin layout table above.
+3. Select the appropriate board (Arduino Uno) and port in the IDE.
+4. Upload the code to the Arduino.
+5. Open the Serial Monitor (9600 baud) to track the motor speed in real time.
+
+## Possible Improvements
+
+- Add debounce logic for the buttons (currently reading relies only on a `delay(100)`, which can cause multiple reads from a single press).
+- Use `INPUT_PULLUP` instead of `digitalWrite` after `pinMode(INPUT)`.
+- Add a direction LED indicator or an LCD screen instead of the Serial Monitor.
+
+## License
+
+Free to use and modify for personal and educational purposes.
