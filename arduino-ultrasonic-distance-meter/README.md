@@ -132,13 +132,6 @@ At the top of the sketch:
 
 ---
 
-## Suggested repository details
-
-Copy these into the GitHub sidebar (the gear icon next to "About"):
-
-**Description:**
-`Push-button distance meter using Arduino, HC-SR04 ultrasonic sensor and a 16x2 I2C LCD.`
-
 **Topics:**
 `arduino` `hc-sr04` `ultrasonic-sensor` `lcd-i2c` `distance-meter` `arduino-project`
 
