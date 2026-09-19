@@ -144,10 +144,6 @@ Copy these into the GitHub sidebar (the gear icon next to "About"):
 
 ---
 
-## License
-
-Add your license here (for example [MIT](https://choosealicense.com/licenses/mit/)).
-
 ## Author
 
-Your name - [GitHub profile](https://github.com/your-username)
+Amar Puščul
